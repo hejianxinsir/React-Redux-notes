@@ -1,3 +1,4 @@
+
 // 生命周期四个过程 : 生 挂 更 死
 
 let app = document.getElementById('app');
