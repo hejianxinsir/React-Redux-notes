@@ -20,7 +20,7 @@ app.appendChild(div);
 div.querySelector('button').onclick = ()=>{
   state += 1
   
-  // update div
+  // update div  更 : 更新
   div.querySelector('p').innerText = state;
 };
 
@@ -28,5 +28,5 @@ div.querySelectorAll('button')[1].onclick = ()=>{
   div.querySelector('button').onclick = nunll;
   div.querySelector('button')[1].onclick = null;
   div.remove();
-  div = null;   // destroy div
+  div = null;   // destroy div  死
 };
