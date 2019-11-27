@@ -1,6 +1,5 @@
-用 hash 做路由
-
-// 用不同的字符串，对应不同的界面，就可以做路由
+// 用 hash 做路由
+// 不同的字符串，对应不同的界面，就可以做路由
 
 import React from "react";
 import ReactDOM from "react-dom";
