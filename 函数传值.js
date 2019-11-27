@@ -1,4 +1,4 @@
-```
+
 // 把一个作用域里的 n 的值，传给 f1 f2 f3 f4 
 
 function f1(n1){
@@ -25,4 +25,4 @@ function f4(n4){
 	f1(n)
 	console.log('done')
 }
-```
+
