@@ -1,3 +1,5 @@
+// 注释部分，是原生 js 实现的。
+
 import React from "react";
 import ReactDOM from "react-dom";
 import { useState } from "react";
