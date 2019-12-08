@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <script src="https://cdn.bootcss.com/redux/4.0.4/redux.min.js"></script>
+
+  <title>JS Bin</title>
+</head>
+<body>
+  <div id="app">
+  </div>
+  
+  <script>
+    
+    function add1(){
+      store.dispatch({type: 'add', payload: 1})   // action type payload
+    }
+    
+    function render(store){
+    var app = document.getElementById('app');
+    app.innerHTML = `
+      <div>
+        <div>你点击了<span id="value">${store.getState()}</span>次</div>
+        <button id="add1" onclick="add1()">+1</button>
+        <button>-1</button>
+        <button>单数加1</button>
+        <button>1秒后加1</button>
+      </div>
+    `
+    }
+    
+    function stateChanger(state, action){
+      if(state === undefined){
+        return 0
+      }else{
+        if(action.type = 'add'){
+          var newState = state + 1     // 更新 state
+          return newState
+        }else{
+          return state
+        }
+      }
+    }
+    var store = Redux.createStore(stateChanger)
+    render(store);
+    store.subscribe( ()=>{
+      render(store)
+    })
+  </script>
+</body>
+</html>
