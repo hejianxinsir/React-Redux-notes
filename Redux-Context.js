@@ -83,3 +83,61 @@ setTimeout(()=>{
   window.f1()
 },1000)
 }
+
+/*
+Consumer 是如何实现的？
+*/
+
+function Consumer(props){
+  let x = 100
+  let result = props.children(x)  // 这是重点，props.children(x) 执行子函数
+  return (
+    <div>{result}</div>
+  )
+}
+
+function App(){
+  return (
+    <Consumer>
+    {(n)=><div>{n}</div> }
+    </Consumer>
+  )
+}
+
+/*
+Context 的例子
+*/
+
+function F3(){
+  return(
+    3333
+    <nContext.Consumer>
+    {(x)=><F4 n4={x} />}
+    </nContext.Consumer>
+  )
+}
+
+function F4(props){
+  return <div className="border">4444, {props.n4}</div>
+}
+
+const sContext = React.createContext();
+
+class App extends React.Component {
+  constructor(){
+    super()
+    this.state = {
+      n: 67
+    }
+  }
+  
+  render(){
+    return (
+      <div>
+        <nContext.Provider value={this.state.n}>
+          <F1 />
+        </nContext.Provider>
+      </div>
+    )
+  }
+}
