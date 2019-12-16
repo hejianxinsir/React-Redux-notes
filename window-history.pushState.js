@@ -1,5 +1,6 @@
 
-// window.history.pushState(null,'','/login')
+// window.history.pushState(null,'','/login')；只有当后端把所有东西都指向首页才能用，否则你就用 hash 做路由，在前端，
+// hash 就是路由
 
 import React from "react";
 import ReactDOM from "react-dom";
