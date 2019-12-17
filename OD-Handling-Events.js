@@ -27,6 +27,57 @@ function ActionLink(){
   )
 }
 
+// React 里如何绑定 this ？以下有四种方法，但是！但是，官方推荐在 constructor 里绑定 this 或者用 class fields syntax 语法
+
+// 方法一:
+<button onClick={this.handleClick.bind(this)}
+
+// 方法二: 或者写到 constructor 里面; 跟方法一其实是一样的，位置不同而已
+constructor(props){
+  super(props);
+  this.state = {}
+  this.handleClick = this.handleClick.bind(this)
+}
+
+// 方法三: 用还在实验当中的新语法(当下时间 2019.12.17)，即: publick class fields syntax
+// 这个方法在 create react app 里是内置的
+
+class LoginButton extends React.Component {
+  constructor(){
+    super();
+    this.state = {}
+  }
+  
+  handleClick = ()=>{
+    console.log('this is': this);
+  }
+  
+  render(){
+    return(
+      <button onClick={this.handleClick}>
+        click me
+      </button>
+    )
+  }
+}
+
+// 方法四: 用箭头函数嘛
+
+class LoginButton extends React.Component {
+  handleClick(){
+    console.log('this is :' this)
+  }
+  
+  render(){
+    return(
+      <button onClick={(e)=>this.handleClick(e)}>
+        click me
+      </button>
+    )
+  }
+}
+
+
 // 做一个小按钮
 
 import React from "react";
