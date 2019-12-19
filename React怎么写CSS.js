@@ -57,18 +57,27 @@ function App(props) {
   );
 }
 
-// 方法四: emotion 全部代码如下，好像不需要引入 react
+// 方法四: emotion 全部代码如下，好像不需要引入 react; 也是自动加名字
 
 /** @jsx jsx */
 // import React from "react";
 import ReactDOM from "react-dom";
 import { jsx, css, Global, ClassNames } from '@emotion/core'
 
-function App() {
+function App(props) {
+  const theme = props.theme
   return (
       <div css={{color: 'red'}}>
         x
-        <div css={css`color: black`}>
+        <div css={css`
+        color: white;
+        font-size:30px;
+        width: 200px;
+        height: 50px;
+        border: 1px solid;
+        background: ${theme};
+        `}
+        >
           janson
         </div>
         <Global
@@ -96,7 +105,7 @@ function App() {
 }
 
 const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement); 
+ReactDOM.render(<App theme='black'/>, rootElement); 
 
 
 
