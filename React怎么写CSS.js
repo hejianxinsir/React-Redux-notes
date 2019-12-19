@@ -34,4 +34,27 @@ function App() {
   );
 }
 
+// 方法三: 原则是，在 github 上找 star 数量最多的前几个
+// 下面是用 JS 写 CSS
+// - 在 codesnadbox 引入 styled-components (这个办法自动帮你想名字)
+// - import styled from 'styled-components'; 然后这样写:
+
+
+
+function App(props) {
+  const theme = props.theme
+
+  const Div1 = styled.div`
+    color: pink;
+    font-size: 50px;
+    background: ${theme}
+  `;
+
+  return (
+    <Div1>
+      x
+    </Div1>
+  );
+}
+
 
