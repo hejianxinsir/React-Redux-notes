@@ -57,4 +57,46 @@ function App(props) {
   );
 }
 
+// 方法四: emotion 全部代码如下，好像不需要引入 react
+
+/** @jsx jsx */
+// import React from "react";
+import ReactDOM from "react-dom";
+import { jsx, css, Global, ClassNames } from '@emotion/core'
+
+function App() {
+  return (
+      <div css={{color: 'red'}}>
+        x
+        <div css={css`color: black`}>
+          janson
+        </div>
+        <Global
+          styles={{
+            body: {
+              margin: 0,
+              padding: 0
+            }
+          }}
+        />
+        <ClassNames>
+          {({ css, cx }) => (
+            <div
+              className={cx(
+                'some-class',
+                css`
+                  color: yellow;
+                `
+              )}
+            />
+          )}
+        </ClassNames>
+      </div>
+  );
+}
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement); 
+
+
 
