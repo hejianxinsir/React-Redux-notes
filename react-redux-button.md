@@ -21,7 +21,7 @@ HTML
 
 JS
 
-	```
+```
 var store = Redux.createStore(stateChanger)
 
 	function add1(){
@@ -51,7 +51,6 @@ function render(){
 			<button onclick="add3()">一秒后+1</button>
 			</div>
 		</div>
-		`
 }
 
 render(store)
@@ -72,6 +71,4 @@ function stateChanger(state, action){
 	}
 	return newState
 }
-
-
 ```
