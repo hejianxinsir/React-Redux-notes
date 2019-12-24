@@ -7,9 +7,9 @@ HTML
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 <title>JS Bin</title>
-<script src="https://cdn.bootcss.com/react/16.10.1/umd/react.production.min.js"></script>
-<script src="https://cdn.bootcss.com/react-dom/16.10.1/umd/react-dom.production.min.js"></script>
-<script src="https://cdn.bootcss.com/redux/4.0.4/redux.min.js"></script>
+	<script src="https://cdn.bootcss.com/react/16.10.1/umd/react.production.min.js"></script>
+	<script src="https://cdn.bootcss.com/react-dom/16.10.1/umd/react-dom.production.min.js"></script>
+	<script src="https://cdn.bootcss.com/redux/4.0.4/redux.min.js"></script>
 </head>
 <body>
 <div id="app">
@@ -23,8 +23,7 @@ JS
 
 ```
 var store = Redux.createStore(stateChanger)
-
-	function add1(){
+function add1(){
 		store.dispatch({type: 'add', payload: 1})
 	}
 
